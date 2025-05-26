@@ -40,6 +40,15 @@ spec:
     nodePort: {{ .Values.minecraftProxy.nodePort }}
     {{- end }}
     protocol: TCP
+  {{- if .Values.minecraftProxy.simpleVoiceChat}}
+  - name: proxy
+    port: 25565
+    targetPort: voice
+    {{- if .Values.minecraftProxy.nodePort }}
+    nodePort: {{ .Values.minecraftProxy.nodePort }}
+    {{- end }}
+    protocol: udp
+  {{- end}}
   {{- range .Values.minecraftProxy.extraPorts }}
   {{- if and .service.enabled .service.embedded }}
   - name: {{ .name }}

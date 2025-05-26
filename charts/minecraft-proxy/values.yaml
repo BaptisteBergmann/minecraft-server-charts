@@ -124,6 +124,7 @@ minecraftProxy:
   jvmOpts: ""
   # Options like -X that need to proceed general JVM options
   jvmXXOpts: ""
+  simpleVoiceChat: false
   # DEPRECATED: use top-level rconServiceAnnotations instead
   serviceAnnotations: {}
   serviceType: ClusterIP

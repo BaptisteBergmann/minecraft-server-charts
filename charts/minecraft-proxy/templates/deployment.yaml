@@ -144,6 +144,11 @@ spec:
         - name: proxy
           containerPort: 25577
           protocol: TCP
+        {{- if .Values.minecraftProxy.simpleVoiceChat}}
+        - name: voice
+          containerPort: 25577
+          protocol: UDP
+        {{- end}}
         {{- if .Values.minecraftProxy.rcon.enabled }}
         - name: rcon
           containerPort: 25575
