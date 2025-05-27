@@ -41,7 +41,7 @@ spec:
     {{- end }}
     protocol: TCP
   {{- if .Values.minecraftProxy.simpleVoiceChat}}
-  - name: proxy
+  - name: voice
     port: 25565
     targetPort: voice
     {{- if .Values.minecraftProxy.nodePort }}
